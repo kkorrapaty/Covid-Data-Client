@@ -8,8 +8,8 @@ const eventsPatient = require('./patient/events')
 // require('./example')
 
 $(() => {
-  // Hide Create Patient until Signed in
-  $('#createPatient').hide()
+  // // Hide Create Patient until Signed in
+  // $('#createPatient').hide()
   // CHANGE PASSWORD hidden until Signed In
   $('#change-pass-sec').hide()
 
@@ -27,4 +27,7 @@ $(() => {
 
   // Create Patient With Handlebar
   eventsPatient.addHandlers()
+  // hide Display patients
+  // $('#showAllPatients').hide()
+  $('.patients').hide()
 })

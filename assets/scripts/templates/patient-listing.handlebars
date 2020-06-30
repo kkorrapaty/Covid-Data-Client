@@ -1,0 +1,21 @@
+{{#each patients as |patient|}}
+  {{log patient}}
+  {{log patient._id}}
+  <section data-id="{{patient._id}}">
+    <h4>Patient:</h4>
+    <h3>
+      {{limit patient.name 15}}
+    </h3>
+    <h4>DOB:</h4>
+    <p>
+      {{patient.dob}}
+    </p>
+    <h4>State:</h4>
+    <p>
+      {{patient.state}}
+    </p>
+    <!-- Remove Button -->
+    {{> remove-button data-id=patient._id}}
+  </section>
+
+{{/each}}
