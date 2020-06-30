@@ -1,5 +1,6 @@
 'use strict'
-const events = require('./auth/events')
+const eventsAuth = require('./auth/events')
+const eventsPatient = require('./patient/events')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -7,18 +8,23 @@ const events = require('./auth/events')
 // require('./example')
 
 $(() => {
+  // Hide Create Patient until Signed in
+  $('#createPatient').hide()
   // CHANGE PASSWORD hidden until Signed In
   $('#change-pass-sec').hide()
 
   // SIGN UP
-  $('#sign-up').on('submit', events.onSignUp)
+  $('#sign-up').on('submit', eventsAuth.onSignUp)
 
   // SIGN IN
-  $('#sign-in').on('submit', events.onSignIn)
+  $('#sign-in').on('submit', eventsAuth.onSignIn)
 
   // CHANGE PASSWORD
-  $('#change-pass').on('submit', events.onChangePassword)
+  $('#change-pass').on('submit', eventsAuth.onChangePassword)
 
   // SIGN OUT
-  $('#sign-out').on('click', events.onSignOut)
+  $('#sign-out').on('click', eventsAuth.onSignOut)
+
+  // Create Patient With Handlebar
+  eventsPatient.addHandlers()
 })

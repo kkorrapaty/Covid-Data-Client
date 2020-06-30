@@ -27,6 +27,9 @@ const signInSuccess = function (response) {
   // show CHANGE PASSWORD
   $('#change-pass-sec').show()
   // show SIGN OUT
+
+  // Display Create Patient
+  $('#createPatient').show()
 }
 
 const signInFailure = function (response) {
@@ -57,6 +60,9 @@ const signOutSuccess = function (response) {
   $('#sign-in-sec').show()
   // hide CHANGE PASSWORD
   $('#change-pass-sec').hide()
+
+  // hide Create Patient
+  $('#createPatient').hide()
 }
 
 const signOutFailure = function (response) {
