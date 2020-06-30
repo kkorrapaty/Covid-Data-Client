@@ -14,15 +14,16 @@
     <body>
       <h1>Covid Data</h1>
       <main>
+        <section id='content'></section>
 
         <!-- SIGN UP SECTION -->
         <section id='sign-up-sec'>
           <h2>Sign Up</h2>
           <form id='sign-up'>
-            <input required placeholder="Enter Email" name="credentials[email]" type="email">
-            <input required placeholder="Enter Password" name="credentials[password]" type="password">
-            <input required placeholder="Confirm Password" name="credentials[password_confirmation]" type="password">
-            <button type="submit">SIGN UP</button>
+            <input required placeholder='Enter Email' name='credentials[email]' type='email'>
+            <input required placeholder='Enter Password' name='credentials[password]' type='password'>
+            <input required placeholder='Confirm Password' name='credentials[password_confirmation]' type='password'>
+            <button type='submit'>SIGN UP</button>
           </form>
         </section>
 
@@ -30,11 +31,27 @@
         <section id='sign-in-sec'>
           <h2>Sign In</h2>
           <form id='sign-in'>
-            <input required placeholder="Enter Email" name="credentials[email]" type="email">
-            <input required placeholder="Enter Password" name="credentials[password]" type="password">
-            <button type="submit">SIGN UP</button>
+            <input required placeholder='Enter Email' name='credentials[email]' type='email'>
+            <input required placeholder='Enter Password' name='credentials[password]' type='password'>
+            <button type='submit'>SIGN UP</button>
           </form>
         </section>
+
+        <!-- CHANGE PASSWORD -->
+        <section id='change-pass-sec'>
+          <h4>Change Password</h4>
+          <form id='change-pass'>
+            <input required placeholder='Enter Old Password' name='passwords[old]' type='password'>
+            <input required placeholder='Enter New Password' name='passwords[new]' type='password'>
+            <button type='submit'>CHANGE</button>
+          </form>
+                  <!-- SIGN OUT -->
+          <h2>SIGN OUT</h2>
+          <button type='button' id='sign-out'>SIGN OUT</button>
+        </section>
+        <!-- <section id='sign-out-sec'>
+
+        </section> -->
 
       </main>
     </body>
