@@ -54,7 +54,7 @@ const onUpdatePatient = function (event) {
 
   api.updatePatient(id, data)
     .then(() => {
-      ui.updatePatientSuccess(data)
+      ui.updatePatientSuccess(data, id)
     })
     .catch(ui.updatePatientFailure)
 }

@@ -2,6 +2,7 @@
 const store = require('../store')
 
 const showPatientTemplate = require('../templates/patient-listing.handlebars')
+const updatePatientTemplate = require('../templates/patient-update.handlebars')
 
 // Create Patient Display
 const createPatientSuccess = function (response) {
@@ -41,12 +42,24 @@ const deletePatientFailure = function () {
   $('#content').removeClass().addClass('failure').text('Delete Patient Failed').show()
 }
 
-const updatePatientSuccess = function (data) {
+const updatePatientSuccess = function (data, id) {
   // clear form
   $('form').trigger('reset')
-  // console.log(data)
-  // const showPatientsHTML = showPatientTemplate({ patients: data.patients })
-  // $('#display').html(showPatientsHTML).addClass('.display').show()
+  $('#' + id).remove()
+
+  // call template to update data
+  const updatePatientsHTML = updatePatientTemplate({
+    name: data.patients.name,
+    dob: data.patients.dob,
+    state: data.patients.state
+  })
+  // const displayHTML = $('#display').html()
+
+  $('#display').addClass('.display').fadeOut(800, function () {
+    $('#display').html('').fadeIn('fast', function () {
+      $('#display').html('<h3>Updated Patient</h3>').append(updatePatientsHTML).addClass('.display').show()
+    })
+  })
   // Handlebars.registerHelper('loud', function (str) {
   //   return str.toUpperCase()
   // })
