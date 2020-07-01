@@ -17,7 +17,7 @@ const signInSuccess = function (response) {
   // $('#content').removeClass().addClass('success').text('Sign In Success!')
   // hide content
   $('#content').removeClass().addClass('success').hide()
-  // console.log(response)
+  console.log(response)
   // Store TOKEN
   store.user = response.user
 
@@ -44,7 +44,7 @@ const signInFailure = function (response) {
 // CHANGE PWD
 const changePasswordSuccess = function (response) {
   $('form').trigger('reset')
-  $('#content').removeClass().addClass('success').text('Password Change Success!')
+  $('#content').removeClass().addClass('success').text('Password Change Success!').show()
 }
 
 const changePasswordFailure = function (response) {

@@ -33,12 +33,33 @@ const showAllPatients = function (data) {
   })
 }
 
+// delete Patient
 const deletePatient = function (id) {
+  console.log('In Patient API')
   $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/patients/' + id,
+    url: config.apiUrl + `/patients/${id}`,
     headers: {
       Authorization: 'Token token=' + store.user.token
+    }
+  })
+  console.log('Leaving Patient API')
+}
+
+const updatePatient = function (id, data) {
+  console.log(data)
+  $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + `/patients/${id}`,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      patients: {
+        name: data.patients.name,
+        dob: data.patients.dob,
+        state: data.patients.state
+      }
     }
   })
 }
@@ -46,5 +67,6 @@ const deletePatient = function (id) {
 module.exports = {
   createPatient,
   showAllPatients,
-  deletePatient
+  deletePatient,
+  updatePatient
 }

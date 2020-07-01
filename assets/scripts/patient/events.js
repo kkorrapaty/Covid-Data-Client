@@ -41,10 +41,27 @@ const onDeletePatient = function (event) {
   console.log(event)
   console.log('id ', id)
   api.deletePatient(id)
-    .then(() => {
-      ui.deletePatientSuccess(event)
-    })
+    .then(ui.deletePatientSuccess)
+    .catch(err => { console.log(err) })
     .catch(ui.deletePatientFailure)
+}
+
+const onUpdatePatient = function (event) {
+  // ui.displayOptionUpdate()
+  // event.preventDefault()
+  const data = createForm(event)
+  const id = $(event.target).data('id')
+  console.log(event)
+  console.log(data)
+  console.log(id)
+  console.log(event.target)
+
+  api.updatePatient(id, data)
+    .then(() => {
+      console.log('Finished API Call')
+    })
+    .then(ui.updatePatientSuccess)
+    .catch(ui.updatePatientFailure)
 }
 
 // Handler
@@ -53,6 +70,7 @@ const addHandlers = () => {
   $('#showAllPatients').on('click', onShowAllPatient)
   $('#hideAllPatients').on('click', onHideAllPatient)
   $('#display').on('click', '.deletePatientButton', onDeletePatient)
+  $('#display').on('submit', '.updatePatient', onUpdatePatient)
 }
 
 module.exports = {

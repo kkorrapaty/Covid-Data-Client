@@ -20,21 +20,29 @@ const showAllPatientSuccess = function (data) {
   // $('.patients').show()
   console.log(data)
   const showPatientsHTML = showPatientTemplate({ patients: data.patients })
-  $('#display').append(showPatientsHTML).addClass('.display').show()
+  $('#display').html(showPatientsHTML).addClass('.display').show()
 }
 
 const showAllPatientFailure = function () {
   $('#content').removeClass().addClass('failure').text('Show All Patients Failed')
 }
 
-const deletePatientSuccess = function (event) {
+const deletePatientSuccess = function () {
   console.log('In Patient UI')
-  console.log(event)
+  // console.log(event)
   // $(event.target).parent().remove()
 }
 
 const deletePatientFailure = function () {
-  $('#content').removeClass().addClass('failure').text('Delete Patient Failed')
+  $('#content').removeClass().addClass('failure').text('Delete Patient Failed').show()
+}
+
+const updatePatientSuccess = function (event) {
+  $('#content').removeClass().addClass('success').text('Update Patient Success!').show()
+}
+
+const updatePatientFailure = function () {
+  $('#content').removeClass().addClass('failure').text('Update Patient Failed').show()
 }
 
 module.exports = {
@@ -43,5 +51,7 @@ module.exports = {
   showAllPatientSuccess,
   showAllPatientFailure,
   deletePatientSuccess,
-  deletePatientFailure
+  deletePatientFailure,
+  updatePatientSuccess,
+  updatePatientFailure
 }
