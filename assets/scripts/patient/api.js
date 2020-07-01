@@ -5,7 +5,7 @@ const store = require('../store')
 
 // Creating Patient
 const createPatient = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/patients',
@@ -35,20 +35,20 @@ const showAllPatients = function (data) {
 
 // delete Patient
 const deletePatient = function (id) {
-  console.log('In Patient API')
-  $.ajax({
+  // console.log('In Patient API')
+  return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + `/patients/${id}`,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
-  console.log('Leaving Patient API')
+  // console.log('Leaving Patient API')
 }
 
 const updatePatient = function (id, data) {
-  console.log(data)
-  $.ajax({
+  // console.log(data)
+  return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + `/patients/${id}`,
     headers: {

@@ -5,10 +5,12 @@ const showPatientTemplate = require('../templates/patient-listing.handlebars')
 
 // Create Patient Display
 const createPatientSuccess = function (response) {
-  console.log(response)
+  // console.log(response)
   store.patient = response.patient
   $('form').trigger('reset')
-  $('#content').removeClass().addClass('success').text('Create Patient Success!')
+  $('#display').show()
+  $('#content').hide()
+  // $('#content').removeClass().addClass('success').text('Create Patient Success!')
 }
 
 const createPatientFailure = function () {
@@ -17,8 +19,9 @@ const createPatientFailure = function () {
 
 // show all patients
 const showAllPatientSuccess = function (data) {
+  $('#content').hide()
   // $('.patients').show()
-  console.log(data)
+  // console.log(data)
   const showPatientsHTML = showPatientTemplate({ patients: data.patients })
   $('#display').html(showPatientsHTML).addClass('.display').show()
 }
@@ -27,17 +30,26 @@ const showAllPatientFailure = function () {
   $('#content').removeClass().addClass('failure').text('Show All Patients Failed')
 }
 
-const deletePatientSuccess = function () {
-  console.log('In Patient UI')
+const deletePatientSuccess = function (event) {
+  // console.log('In Patient UI')
   // console.log(event)
-  // $(event.target).parent().remove()
+  $(event.target).parent().remove()
+  $('#content').hide()
 }
 
 const deletePatientFailure = function () {
   $('#content').removeClass().addClass('failure').text('Delete Patient Failed').show()
 }
 
-const updatePatientSuccess = function (event) {
+const updatePatientSuccess = function (data) {
+  // clear form
+  $('form').trigger('reset')
+  // console.log(data)
+  // const showPatientsHTML = showPatientTemplate({ patients: data.patients })
+  // $('#display').html(showPatientsHTML).addClass('.display').show()
+  // Handlebars.registerHelper('loud', function (str) {
+  //   return str.toUpperCase()
+  // })
   $('#content').removeClass().addClass('success').text('Update Patient Success!').show()
 }
 

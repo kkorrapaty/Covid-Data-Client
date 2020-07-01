@@ -38,29 +38,24 @@ const onHideAllPatient = function (event) {
 const onDeletePatient = function (event) {
   event.preventDefault()
   const id = $(event.target).data('id')
-  console.log(event)
-  console.log('id ', id)
+  // console.log(event)
+  // console.log('id ', id)
   api.deletePatient(id)
-    .then(ui.deletePatientSuccess)
-    .catch(err => { console.log(err) })
+    .then(() => {
+      ui.deletePatientSuccess(event)
+    })
+    // .catch(err => { console.log(err) })
     .catch(ui.deletePatientFailure)
 }
 
 const onUpdatePatient = function (event) {
-  // ui.displayOptionUpdate()
-  // event.preventDefault()
   const data = createForm(event)
   const id = $(event.target).data('id')
-  console.log(event)
-  console.log(data)
-  console.log(id)
-  console.log(event.target)
 
   api.updatePatient(id, data)
     .then(() => {
-      console.log('Finished API Call')
+      ui.updatePatientSuccess(data)
     })
-    .then(ui.updatePatientSuccess)
     .catch(ui.updatePatientFailure)
 }
 
