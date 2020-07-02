@@ -5,6 +5,8 @@ An application where a user, as a nurse or doctor, can input data about patients
 ### Links
 [Server-Side](https://github.com/kkorrapaty/Covid-Data-Server)
 
+[WireFrame] <img src="public/WIreFrameProject2.pdf">
+
 ## User Stories
 -   As a nurse I want to input data into my patient
 -   As a nurse I want to be able to update the data because it constantly changes
