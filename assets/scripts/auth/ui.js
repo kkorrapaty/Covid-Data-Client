@@ -21,6 +21,9 @@ const signInSuccess = function (response) {
   // Store TOKEN
   store.user = response.user
 
+  // hide facts
+  $('.facts').hide()
+
   // hide SIGN UP section
   $('#sign-up-sec').hide()
   // hide SIGN IN section
@@ -60,6 +63,9 @@ const signOutSuccess = function (response) {
   store.user = null
   // get rid of patient info
   store.patient = null
+
+  // show facts
+  $('.facts').show()
 
   // show SIGN UP section
   $('#sign-up-sec').show()

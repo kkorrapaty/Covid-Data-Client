@@ -12,7 +12,15 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Covid Data</h1>
+      <h1>Covid Data Inputter</h1>
+      <section class="facts">
+        <ul style="list-style-type:none">
+          <h3>COVID Prevention Tips</h3>
+          <li>Social Distancing</li>
+          <li>Stay home if sick</li>
+          <li>Wear a mask if you NEED to leave your home</li>
+        </ul>
+      </section>
       <nav class="auth">
         <section id='content'></section>
 
@@ -38,7 +46,7 @@
         </section>
       </nav>
         <!-- CHANGE PASSWORD AND SIGN OUT-->
-        <section id='change-pass-sec'>
+      <section id='change-pass-sec'>
           <h4>Change Password</h4>
           <form id='change-pass'>
             <input required placeholder='Enter Old Password' name='passwords[old]' type='password'>
@@ -48,11 +56,11 @@
                   <!-- SIGN OUT -->
           <h2>SIGN OUT</h2>
           <button type='button' id='sign-out'>SIGN OUT</button>
-        </section>
+      </section>
         <!-- <section id='sign-out-sec'>
 
         </section> -->
-        <main>
+      <main>
         <div class='patients'>
           <form id='createPatient'>
             <h2>Create New Patient</h2>
@@ -69,6 +77,6 @@
           <div id='display'></div>
 
         </div>
-        </main>
+      </main>
     </body>
 </html>
