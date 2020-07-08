@@ -24,7 +24,12 @@ const showAllPatientSuccess = function (data) {
   // $('.patients').show()
   // console.log(data)
   const showPatientsHTML = showPatientTemplate({ patients: data.patients })
+
   $('#display').html(showPatientsHTML).addClass('.display').show()
+
+  if ($('#display').is(':empty')) {
+    $('#display').html('Please Enter Patient Info').addClass('.display').show()
+  }
 }
 
 const showAllPatientFailure = function () {

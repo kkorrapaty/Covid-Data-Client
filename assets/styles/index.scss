@@ -1,12 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
 
-$line: green;
+$line: #008000;
+$text-col: #000;
 $alt-color: $cyan;
 
 body {
-  background: lighten($info, 50%);
-  min-height: 100vh;
+  align-items: center;
+  // background: url('public/virus.png') no-repeat center center fixed;
+  // background-image: url('public/virus.png');
+  background-color: $alt-color;
+  background-position: center;
+  // justify-content: center;
+  // background-size: cover;
+  // display: flex;
+
+  // background: lighten($info, 50%);
+  // background-position: top right;
+  // background-repeat: no-repeat;
+
+  // min-height: 100vh;
   padding: 5rem 0 1rem;
+  position: relative;
+  // img {
+  //   opacity: .5;
+  //   position: absolute;
+  // }
 }
 
 .success {
@@ -21,13 +39,18 @@ main {
   @include make-container;
   @include make-container-max-widths;
 
+  height: 100vh;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+
   section {
     @include make-col-ready;
     @include media-breakpoint-up(md) {
-      @include make-col(6);
+      @include make-col(8);
     }
     @include media-breakpoint-up(lg) {
-      @include make-col(4);
+      @include make-col(8);
     }
 
     background: $white;
@@ -42,19 +65,30 @@ main {
     }
   }
 
+  h2 {
+    color: #000080;
+    background-color: white;
+    border: 1px solid black;
+    //padding: 0;
+  }
+
   .display {
     @include make-row;
 
+    width: 100px;
+    height: 100px;
+    float: left;
+
     &:empty {
-      &::before {
+      //&::before {
         // color: lighten($info, 25%);
-        color: black;
+        color: $text-col;
         content: 'Click Get Patients';
         font-size: 10vh;
         line-height: .85;
         text-align: center;
         width: 100%;
-      }
+      //}
     }
   }
 }
@@ -71,16 +105,35 @@ main {
   padding: 1rem;
 }
 
+.change-pass-sec {
+  background-color: invert($text-col);
+  border: 3px solid #73AD21;
+  // padding: 0;
+  position: sticky;
+  height: 50%;
+  top: 0;
+}
+
 h1 {
+  color: invert($text-col);
   font-style: italic;
-  // padding-bottom: 100px;
-  // padding-top: 150px;
   text-align: center;
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 .facts {
+  color: $text-col;
+  font-size: xx-large;
   padding-top: 150px;
   text-align: center;
+
+  ul {
+    background-color: $alt-color;
+    border: 10px dashed $line;
+    padding: 0;
+    position: relative;
+  }
 
   h3 {
     text-decoration: overline underline;
@@ -88,13 +141,16 @@ h1 {
 }
 
 nav {
+  h2 {
+    color: invert($text-col);
+  }
   // @extend .navbar;
   // @extend .navbar-dark;
-  // @extend .bg-dark;
+  @extend .bg-dark;
   @extend .fixed-top;
 
   .app-name {
-    @extend .navbar-brand;
+    // @extend .navbar-brand;
     @extend .h1;
     margin-bottom: 0;
   }

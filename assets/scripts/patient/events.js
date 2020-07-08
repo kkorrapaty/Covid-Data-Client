@@ -59,6 +59,10 @@ const onUpdatePatient = function (event) {
     .catch(ui.updatePatientFailure)
 }
 
+// const onShowSymptoms = function (event) {
+//   console.log(event)
+// }
+
 // Handler
 const addHandlers = () => {
   $('#createPatient').on('submit', onCreatePatient)
@@ -66,6 +70,8 @@ const addHandlers = () => {
   $('#hideAllPatients').on('click', onHideAllPatient)
   $('#display').on('click', '.deletePatientButton', onDeletePatient)
   $('#display').on('submit', '.updatePatient', onUpdatePatient)
+  // USED FOR WHEN NEW RESOURCE IS MADE IN SERVER
+  // $('#display').on('click', onShowSymptoms)
 }
 
 module.exports = {

@@ -8,6 +8,7 @@ const signUpSuccess = function (response) {
 }
 
 const signUpFailure = function (response) {
+  $('form').trigger('reset')
   $('#content').removeClass().addClass('failure').text('Sign Up Failed')
 }
 
@@ -41,6 +42,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (response) {
+  $('form').trigger('reset')
   $('#content').removeClass().addClass('failure').text('Sign In Failed')
 }
 
@@ -51,6 +53,7 @@ const changePasswordSuccess = function (response) {
 }
 
 const changePasswordFailure = function (response) {
+  $('form').trigger('reset')
   $('#content').removeClass().addClass('failure').text('Password Change Failed').show()
 }
 
@@ -82,6 +85,7 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailure = function (response) {
+  $('form').trigger('reset')
   $('#content').removeClass().addClass('failure').text('Sign Out Failed')
 }
 
