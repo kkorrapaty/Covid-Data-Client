@@ -1,8 +1,4 @@
 'use strict'
-// const store = require('../store')
-
-// const winner = require('./winner')
-
 const api = require('./api')
 const ui = require('./ui')
 
@@ -38,13 +34,11 @@ const onHideAllPatient = function (event) {
 const onDeletePatient = function (event) {
   event.preventDefault()
   const id = $(event.target).data('id')
-  // console.log(event)
-  // console.log('id ', id)
+
   api.deletePatient(id)
     .then(() => {
       ui.deletePatientSuccess(event)
     })
-    // .catch(err => { console.log(err) })
     .catch(ui.deletePatientFailure)
 }
 

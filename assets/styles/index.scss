@@ -77,7 +77,8 @@ main {
 
     width: 100px;
     height: 100px;
-    float: left;
+    float: center;
+    text-align: center;
 
     &:empty {
       //&::before {
@@ -86,7 +87,8 @@ main {
         content: 'Click Get Patients';
         font-size: 10vh;
         line-height: .85;
-        text-align: center;
+        position: relative;
+        align-items: center;
         width: 100%;
       //}
     }
