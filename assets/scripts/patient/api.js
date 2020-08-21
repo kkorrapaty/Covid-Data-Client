@@ -16,7 +16,8 @@ const createPatient = function (data) {
       patients: {
         name: data.patients.name,
         dob: data.patients.dob,
-        state: data.patients.state
+        state: data.patients.state,
+        number: data.patients.number
       }
     }
   })
@@ -58,7 +59,8 @@ const updatePatient = function (id, data) {
       patients: {
         name: data.patients.name,
         dob: data.patients.dob,
-        state: data.patients.state
+        state: data.patients.state,
+        number: data.patients.number
       }
     }
   })

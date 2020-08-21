@@ -56,7 +56,8 @@ const updatePatientSuccess = function (data, id) {
   const updatePatientsHTML = updatePatientTemplate({
     name: data.patients.name,
     dob: data.patients.dob,
-    state: data.patients.state
+    state: data.patients.state,
+    number: data.patients.number
   })
   // const displayHTML = $('#display').html()
 
