@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>CovidData</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Covid Data Inputter</h1>
+
+      <!-- <div class="img">
+        <img alt="COVID" src="public/virus.png"/>
+      </div> -->
+
+      <section class="facts">
+        <ul style="list-style-type:none">
+          <h3>COVID Prevention Tips</h3>
+          <li>Social Distancing</li>
+          <li>Stay home if sick</li>
+          <li>Wear a mask if you NEED to leave your home</li>
+        </ul>
+      </section>
+
+      <nav class="auth">
+        <section id='content'></section>
+
+        <!-- SIGN UP SECTION -->
+        <section id='sign-up-sec'>
+          <h2>Sign Up</h2>
+          <form id='sign-up'>
+            <input required placeholder='Enter Email' name='credentials[email]' type='email'>
+            <input required placeholder='Enter Password' name='credentials[password]' type='password'>
+            <input required placeholder='Confirm Password' name='credentials[password_confirmation]' type='password'>
+            <button type='submit'>SIGN UP</button>
+          </form>
+        </section>
+
+        <!-- SIGN IN SECTION -->
+        <section id='sign-in-sec'>
+          <h2>Sign In</h2>
+          <form id='sign-in'>
+            <input required placeholder='Enter Email' name='credentials[email]' type='email'>
+            <input required placeholder='Enter Password' name='credentials[password]' type='password'>
+            <button type='submit'>SIGN IN</button>
+          </form>
+        </section>
+      </nav>
+
+
+        <!-- CHANGE PASSWORD AND SIGN OUT-->
+      <section id='change-pass-sec' class="change-pass-sec">
+          <h4>Change Password</h4>
+          <form id='change-pass'>
+            <input required placeholder='Enter Old Password' name='passwords[old]' type='password'>
+            <input required placeholder='Enter New Password' name='passwords[new]' type='password'>
+            <button type='submit'>CHANGE</button>
+          </form>
+                  <!-- SIGN OUT -->
+          <h2>SIGN OUT</h2>
+          <button type='button' id='sign-out'>SIGN OUT</button>
+      </section>
+        <!-- <section id='sign-out-sec'>
+
+        </section> -->
+      <main>
+        <div class='patients'>
+          <form id='createPatient'>
+            <h2>Create New Patient</h2>
+            <input required placeholder="Enter Name" type="text" name="patients[name]">
+            <input required placeholder="Enter DOB" type="date" name="patients[dob]">
+            <input required placeholder="Enter State" type="text" name="patients[state]">
+            <input required placeholder="Enter Phone Number" type="tel" name="patients[number]">
+            <button type="submit">CREATE</button>
+          </form>
+
+          <h2>Show Patients</h2>
+          <button type="submit" id='showAllPatients'>SHOW</button>
+          <button type="submit" id='hideAllPatients'>HIDE</button>
+
+          <div id='display'></div>
+
+        </div>
+      </main>
+    </body>
+</html>
